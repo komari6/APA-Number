@@ -10,7 +10,7 @@
     <category citation-format="numeric"/>
     <category field="psychology"/>
     <updated>2025-05-14T00:00:00+00:00</updated>
-    <summary>APA 7th style with numeric in-text citations and no DOI/URL</summary>
+    <summary>APA 7th with numeric citations, no DOI/URL, suitable for tabbed reference lists</summary>
   </info>
 
   <macro name="author">
@@ -91,7 +91,7 @@
               <text variable="title"/>
               <text macro="container-title"/>
               <text macro="volume-issue"/>
-              <text variable="page"/>
+              <text macro="pages"/>
             </group>
           </if>
           <else-if type="book">

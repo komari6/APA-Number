@@ -5,7 +5,7 @@
     <id>http://www.zotero.org/styles/apa-7th-numeric-no-doi</id>
     <link href="http://www.zotero.org/styles/apa-7th-numeric-no-doi" rel="self"/>
     <author>
-      <name>Custom Modified by Khaled Alomari</name>
+      <name>Khaled Alomari</name>
     </author>
     <category citation-format="numeric"/>
     <category field="psychology"/>
@@ -27,10 +27,6 @@
     <date variable="issued">
       <date-part name="year" prefix="(" suffix=")"/>
     </date>
-  </macro>
-
-  <macro name="title">
-    <text variable="title"/>
   </macro>
 
   <macro name="container-title">
@@ -55,19 +51,15 @@
     <text variable="publisher"/>
   </macro>
 
-  <macro name="editor">
-    <names variable="editor">
-      <name and="text" delimiter=", " initialize-with=". "/>
-    </names>
-  </macro>
-
   <macro name="chapter">
     <group delimiter=". ">
       <text variable="title"/>
       <group>
         <text term="in" text-case="capitalize-first"/>
-        <text macro="editor" prefix=" "/>
-        <text variable="container-title" font-style="italic" prefix=", "/>
+        <names variable="editor" prefix=" " suffix=", ">
+          <name and="text" initialize-with=". " delimiter=", "/>
+        </names>
+        <text variable="container-title" font-style="italic"/>
         <group prefix=" (" suffix=").">
           <label variable="page" form="short"/>
           <text variable="page"/>

@@ -5,18 +5,17 @@
     <id>http://www.zotero.org/styles/apa-7th-numeric-no-doi</id>
     <link href="http://www.zotero.org/styles/apa-7th-numeric-no-doi" rel="self"/>
     <author>
-      <name>Khaled Alomari</name>
+      <name>Modified by Khaled Alomari</name>
     </author>
     <category citation-format="numeric"/>
     <category field="psychology"/>
     <updated>2025-05-14T00:00:00+00:00</updated>
-    <summary>APA 7th with numeric citations, no DOI or URLs</summary>
+    <summary>APA 7th style with numeric in-text citations and no DOI/URL</summary>
   </info>
 
   <macro name="author">
     <names variable="author">
-      <name and="text" delimiter=", " initialize-with=". "/>
-      <label form="short" prefix=", " text-case="lowercase"/>
+      <name and="text" initialize-with=". " delimiter=", "/>
       <substitute>
         <names variable="editor"/>
       </substitute>
@@ -27,6 +26,10 @@
     <date variable="issued">
       <date-part name="year" prefix="(" suffix=")"/>
     </date>
+  </macro>
+
+  <macro name="title">
+    <text variable="title"/>
   </macro>
 
   <macro name="container-title">

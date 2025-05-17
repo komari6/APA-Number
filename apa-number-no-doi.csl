@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
   <info>
-    <title>APA 7th Edition - Numeric (No DOI)</title>
+    <title>APA 7th Numeric No DOI</title>
     <id>http://www.zotero.org/styles/apa-7th-numeric-no-doi</id>
     <link href="http://www.zotero.org/styles/apa-7th-numeric-no-doi" rel="self"/>
     <author>
-      <name>Custom by ChatGPT</name>
+      <name>Custom Modified by Khaled Alomari</name>
     </author>
     <category citation-format="numeric"/>
     <category field="psychology"/>
     <updated>2025-05-14T00:00:00+00:00</updated>
-    <summary>APA 7th format, numeric in-text citations, no DOIs or URLs.</summary>
-    <citation-format>numeric</citation-format>
-    <style-options>
-      <option name="in-text-citation-delimiter" value=", "/>
-      <option name="et-al-min" value="3"/>
-      <option name="et-al-use-first" value="1"/>
-      <option name="et-al-subsequent-min" value="3"/>
-      <option name="et-al-subsequent-use-first" value="1"/>
-    </style-options>
+    <summary>APA 7th with numeric citations, no DOI or URLs</summary>
   </info>
 
   <macro name="author">
     <names variable="author">
-      <name and="text" initialize-with=". " delimiter=", "/>
+      <name and="text" delimiter=", " initialize-with=". "/>
       <label form="short" prefix=", " text-case="lowercase"/>
       <substitute>
         <names variable="editor"/>
@@ -38,31 +30,35 @@
   </macro>
 
   <macro name="title">
-    <text variable="title" font-style="italic"/>
+    <text variable="title"/>
   </macro>
 
   <macro name="container-title">
     <text variable="container-title" font-style="italic"/>
   </macro>
 
+  <macro name="volume-issue">
+    <group delimiter=" ">
+      <text variable="volume" font-style="italic"/>
+      <text variable="issue" prefix="(" suffix=")"/>
+    </group>
+  </macro>
+
   <macro name="pages">
-    <group>
-      <label variable="page" form="short" suffix=" " text-case="lowercase"/>
+    <group delimiter=" ">
+      <label variable="page" form="short" suffix=" "/>
       <text variable="page"/>
     </group>
   </macro>
 
-  <macro name="volume-issue">
-    <group delimiter=", ">
-      <group>
-        <text variable="volume" font-style="italic"/>
-        <text variable="issue" prefix="(" suffix=")"/>
-      </group>
-    </group>
+  <macro name="publisher">
+    <text variable="publisher"/>
   </macro>
 
-  <macro name="book-publisher">
-    <text variable="publisher"/>
+  <macro name="editor">
+    <names variable="editor">
+      <name and="text" delimiter=", " initialize-with=". "/>
+    </names>
   </macro>
 
   <macro name="chapter">
@@ -70,10 +66,8 @@
       <text variable="title"/>
       <group>
         <text term="in" text-case="capitalize-first"/>
-        <names variable="editor" prefix=" " suffix=", ">
-          <name and="text" initialize-with=". " delimiter=", "/>
-        </names>
-        <text variable="container-title" font-style="italic"/>
+        <text macro="editor" prefix=" "/>
+        <text variable="container-title" font-style="italic" prefix=", "/>
         <group prefix=" (" suffix=").">
           <label variable="page" form="short"/>
           <text variable="page"/>
@@ -83,13 +77,13 @@
   </macro>
 
   <citation collapse="citation-number">
-    <layout prefix="[" suffix="]" delimiter=",">
+    <layout prefix="[" suffix="]" delimiter=", ">
       <text variable="citation-number"/>
     </layout>
   </citation>
 
-  <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush">
-    <layout suffix=".">
+  <bibliography et-al-min="6" et-al-use-first="1" second-field-align="flush">
+    <layout>
       <text variable="citation-number" suffix=". "/>
       <group delimiter=". ">
         <group>
@@ -107,13 +101,13 @@
           </if>
           <else-if type="book">
             <group delimiter=". ">
-              <text macro="title"/>
-              <text macro="book-publisher"/>
+              <text variable="title" font-style="italic"/>
+              <text macro="publisher"/>
             </group>
           </else-if>
           <else-if type="chapter">
             <text macro="chapter"/>
-            <text macro="book-publisher"/>
+            <text macro="publisher"/>
           </else-if>
         </choose>
       </group>

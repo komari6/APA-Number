@@ -3,14 +3,15 @@
   <info>
     <title>APA 7th Numeric No DOI</title>
     <id>http://www.zotero.org/styles/apa-7th-numeric-no-doi</id>
+    <link href="http://www.zotero.org/styles/apa" rel="independent-parent"/>
     <link href="http://www.zotero.org/styles/apa-7th-numeric-no-doi" rel="self"/>
     <author>
-      <name>Modified by Khaled Alomari</name>
+      <name>Khaled Alomari</name>
     </author>
     <category citation-format="numeric"/>
     <category field="psychology"/>
     <updated>2025-05-14T00:00:00+00:00</updated>
-    <summary>APA 7th with numeric citations, no DOI/URL, suitable for tabbed reference lists</summary>
+    <rights>This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
   <macro name="author">
